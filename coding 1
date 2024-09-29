@@ -1,0 +1,20 @@
+import cv2
+import numpy as np
+from sklearn.model_selection import train_test_split
+
+# Load images and labels
+images = []  # Your image data here
+labels = []  # Your labels here
+
+for img_path in image_paths:
+    img = cv2.imread(img_path)
+    img = cv2.resize(img, (128, 128))  # Resize images
+    images.append(img)
+    labels.append(label)
+
+# Convert to numpy arrays
+X = np.array(images)
+y = np.array(labels)
+
+# Split data into training and testing sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
